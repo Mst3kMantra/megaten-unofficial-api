@@ -1,0 +1,13 @@
+import { Types } from "mongoose"
+
+interface Persona {
+    affinities?: Types.Array<number>,
+    ailments?: string,
+    lvl: number,
+    price: number,
+    race: string,
+    resists: string,
+    skills?: object,
+    stats: Types.Array<string>,
+    name: string
+}
