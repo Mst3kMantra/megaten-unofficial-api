@@ -1,18 +1,7 @@
 import mongoose, { Schema, Types, Model } from 'mongoose';
+import {IDemon} from '../interfaces/IDemon'
 
-interface Demon {
-    affinities?: Types.Array<number>,
-    ailments?: string,
-    lvl: number,
-    price: number,
-    race: string,
-    resists: string,
-    skills?: object,
-    stats: Types.Array<string>,
-    name: string
-}
-
-const schema = new Schema<Demon, Model<Demon>>({
+const schema = new Schema<IDemon, Model<IDemon>>({
     affinities: {
         type: [Number]
     },
@@ -41,8 +30,8 @@ const schema = new Schema<Demon, Model<Demon>>({
         required: true,
         type: String
     }
-})
+});
 
-const myDB = mongoose.connection.useDb('smt5DB');
+const myDB = mongoose.connection.useDb('megatenDB');
 
-module.exports = myDB.model('Demon', schema, 'demonData')
+module.exports = myDB.model('Demon', schema, 'demonData');
