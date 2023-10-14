@@ -1,11 +1,12 @@
 import { express as ex } from "../../index";
 const Demon = require("../models/Demon");
 const router = ex.Router();
-const asyncHandler = require("express-async-handler");
 
 const demonDataController = require("../controllers/demondataController");
 
 module.exports = router;
+
+//All requests must include game title in url
 
 //Post Method
 router.post("/post", async (req: any, res: any) => {

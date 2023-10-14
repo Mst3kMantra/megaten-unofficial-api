@@ -1,5 +1,4 @@
 import asyncHandler from "express-async-handler";
-import { IDemon } from "../interfaces/IDemon";
 const demonService = require("../services/demonService");
 
 exports.getDemonList = asyncHandler(async (req, res, next) => {
