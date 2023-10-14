@@ -27,28 +27,20 @@ router.post("/post", async (req: any, res: any) => {
 //Get all Method
 router.get("/getDemons/:game", demonDataController.getDemonList);
 
-//Get by Name Method
-router.get("/getOne/:name", async (req: any, res: any) => {
-  try {
-    const data = await Demon.find({ name: req.params.name });
-    res.json(data);
-    console.log(data);
-  } catch (error: any) {
-    res.status(500).json({ message: error.message });
-  }
-});
+//Get by Race Method
+router.get(
+  "/getDemonsByRace/:game/:race",
+  demonDataController.getDemonListFromRace
+);
 
-//Get by Id Method
-router.get("/getOnebyID/:id", async (req: any, res: any) => {
-  try {
-    console.log(req.params.id);
-    const data = await Demon.findById(req.params.id);
-    res.json(data);
-    console.log(data);
-  } catch (error: any) {
-    res.status(500).json({ message: error.message });
-  }
-});
+//Get by Name Method
+router.get("/getDemonByName/:game/:name", demonDataController.getDemonFromName);
+
+//Get by Skills Method
+router.get(
+  "/getDemonsBySkills/:game/:skills",
+  demonDataController.getDemonListFromSkills
+);
 
 //Update by ID Method
 router.patch("/update/:id", async (req: any, res: any) => {
