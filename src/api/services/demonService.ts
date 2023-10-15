@@ -68,4 +68,5 @@ module.exports = {
   demonQueryByRace,
   demonQueryByName,
   demonQueryBySkills,
+  affinitiesQuery
 };

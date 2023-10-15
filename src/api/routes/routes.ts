@@ -28,6 +28,9 @@ router.get(
   demonDataController.getDemonListFromSkills
 );
 
+//Get all Affinities Method
+router.get("/getAffinities/:game", demonDataController.getAffinities);
+
 //Get all Skills Method
 router.get("/getSkills/:game", skillDataController.getSkillList);
 

@@ -6,6 +6,11 @@ exports.getDemonList = asyncHandler(async (req, res, next) => {
   res.json(data);
 });
 
+exports.getAffinities = asyncHandler(async (req, res, next) => {
+  const data = await demonService.affinitiesQuery(req.params.game);
+  res.json(data);
+});
+
 exports.getDemonListFromRace = asyncHandler(async (req, res, next) => {
   const data = await demonService.demonQueryByRace(
     req.params.game,
