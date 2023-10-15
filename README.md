@@ -1,5 +1,5 @@
 ***REMOVED*** smt-fusion-compendium-api
-back end for smt fusion compendium app
+Back end for MegatenDex app.
 
 Made with Node.js, express, and mongoose.
 An unofficial API that connects to a MongoDB database storing all the data for the frontend of the MegatenDex app.
