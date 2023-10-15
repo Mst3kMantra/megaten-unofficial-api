@@ -1,13 +1,13 @@
 import { Skill } from "../interfaces/IDemon";
 
 const Demon = require("../models/Demon");
+const Affinity = require("../models/Affinity");
 
 const demonQuery = async (gameTitle: string) => {
   let data = await Demon.find({ game: gameTitle });
   for (const d of data) {
     d.skills = remapSkills(d.skills);
   }
-  console.log(data[0]);
   return data;
 };
 
@@ -18,7 +18,6 @@ const demonQueryByRace = async (gameTitle: string, race: string) => {
   for (const d of data) {
     d.skills = remapSkills(d.skills);
   }
-  console.log(data[0]);
   return data;
 };
 
@@ -29,7 +28,6 @@ const demonQueryByName = async (gameTitle: string, name: string) => {
   for (const d of data) {
     d.skills = remapSkills(d.skills);
   }
-  console.log(data[0]);
   return data;
 };
 
@@ -47,6 +45,11 @@ const demonQueryBySkills = async (gameTitle: string, skills: string[]) => {
     }
   }
   return demonList;
+};
+
+const affinitiesQuery = async (gameTitle: string) => {
+  let data = await Affinity.find({ game: gameTitle });
+  return data;
 };
 
 const remapSkills = (skills: any) => {

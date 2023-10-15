@@ -3,10 +3,45 @@ const Demon = require("../models/Demon");
 const router = ex.Router();
 
 const demonDataController = require("../controllers/demondataController");
+const skillDataController = require("../controllers/skillDataController");
+const fusionController = require("../controllers/fusionController");
 
 module.exports = router;
 
 //All requests must include game title in url
+
+//Get all Demons Method
+router.get("/getDemons/:game", demonDataController.getDemonList);
+
+//Get by Race Method
+router.get(
+  "/getDemonsByRace/:game/:race",
+  demonDataController.getDemonListFromRace
+);
+
+//Get by Name Method
+router.get("/getDemonByName/:game/:name", demonDataController.getDemonFromName);
+
+//Get by Skills Method
+router.get(
+  "/getDemonsBySkills/:game/:skills",
+  demonDataController.getDemonListFromSkills
+);
+
+//Get all Skills Method
+router.get("/getSkills/:game", skillDataController.getSkillList);
+
+//Get all Fusion Chart Method
+router.get("/getFusionChart/:game", fusionController.getFusionChart);
+
+//Get all Elemental Chart Method
+router.get("/getElemChart/:game", fusionController.getElementChart);
+
+//Get all Special Fusions Method
+router.get("/getSpecialFusions/:game", fusionController.getSpecialFusions);
+
+//Get all Fusion Prerequisites Method
+router.get("/getFusionPrereqs/:game", fusionController.getFusionPrereqs);
 
 //Post Method
 router.post("/post", async (req: any, res: any) => {
@@ -24,24 +59,6 @@ router.post("/post", async (req: any, res: any) => {
     res.status(400).json({ message: error.message });
   }
 });
-
-//Get all Method
-router.get("/getDemons/:game", demonDataController.getDemonList);
-
-//Get by Race Method
-router.get(
-  "/getDemonsByRace/:game/:race",
-  demonDataController.getDemonListFromRace
-);
-
-//Get by Name Method
-router.get("/getDemonByName/:game/:name", demonDataController.getDemonFromName);
-
-//Get by Skills Method
-router.get(
-  "/getDemonsBySkills/:game/:skills",
-  demonDataController.getDemonListFromSkills
-);
 
 //Update by ID Method
 router.patch("/update/:id", async (req: any, res: any) => {

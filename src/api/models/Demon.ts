@@ -22,11 +22,16 @@ const schema = new Schema<IDemon, Model<IDemon>>({
   },
   skills: {
     type: Schema.Types.Mixed,
+    required: true,
   },
   stats: {
     type: [Number],
   },
   name: {
+    required: true,
+    type: String,
+  },
+  game: {
     required: true,
     type: String,
   },
