@@ -1,4 +1,4 @@
-***REMOVED*** megaten-dex-api
+***REMOVED*** megaten-unofficial-api
 Back end for MegatenDex app.
 
 Made with Node.js, express, and mongoose.
