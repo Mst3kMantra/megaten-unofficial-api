@@ -1,9 +1,10 @@
-***REMOVED*** package directories
+# package directories
 node_modules
 jspm_packages
 
-***REMOVED***environment variables
+#environment variables
 .env
+serverless.yml
 
-***REMOVED*** Serverless directories
+# Serverless directories
 .serverless
