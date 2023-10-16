@@ -1,5 +1,5 @@
 import mongoose, { Schema, Model } from "mongoose";
-import { IDemon } from "../interfaces/IDemon";
+import { IDemon } from "../interfaces/IDemon.js";
 
 const schema = new Schema<IDemon, Model<IDemon>>({
   affinities: {

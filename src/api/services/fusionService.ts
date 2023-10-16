@@ -1,7 +1,7 @@
-const FusionChart = require("../models/FusionChart");
-const ElementChart = require("../models/ElementChart");
-const SpecialFusions = require("../models/SpecialFusions");
-const FusionPrereqs = require("../models/FusionPrereqs");
+const FusionChart = require("../models/FusionChart.js");
+const ElementChart = require("../models/ElementChart.js");
+const SpecialFusions = require("../models/SpecialFusions.js");
+const FusionPrereqs = require("../models/FusionPrereqs.js");
 
 const fusionChartQuery = async (gameTitle: string) => {
   const data = await FusionChart.find({ game: gameTitle });
@@ -27,5 +27,5 @@ module.exports = {
   fusionChartQuery,
   elementChartQuery,
   specialFusionsQuery,
-  fusionPrereqsQuery
+  fusionPrereqsQuery,
 };

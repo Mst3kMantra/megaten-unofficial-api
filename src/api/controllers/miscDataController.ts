@@ -1,17 +1,8 @@
-import asyncHandler from "express-async-handler";
+export {};
+const asyncHandler = require("express-async-handler");
 
-exports.getDemonList = asyncHandler(async (req, res, next) => {
-  res.send("NOT IMPLEMENTED");
-});
-
-exports.getDemonList = asyncHandler(async (req, res, next) => {
-  res.send("NOT IMPLEMENTED");
-});
-
-exports.getDemonList = asyncHandler(async (req, res, next) => {
-  res.send("NOT IMPLEMENTED");
-});
-
-exports.getDemonList = asyncHandler(async (req, res, next) => {
-  res.send("NOT IMPLEMENTED");
-});
+const getDemonList = asyncHandler(
+  async (req: any, res: { send: (arg0: string) => void }, next: any) => {
+    res.send("NOT IMPLEMENTED");
+  }
+);

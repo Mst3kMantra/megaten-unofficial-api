@@ -1,7 +1,8 @@
-import { Skill } from "../interfaces/IDemon";
+import { Skill } from "../interfaces/IDemon.js";
 
-const Demon = require("../models/Demon");
-const Affinity = require("../models/Affinity");
+const Demon = require("../models/Demon.js");
+const Affinity = require("../models/Affinity.js");
+const Evolution = require("../models/Evolution.js");
 
 const demonQuery = async (gameTitle: string) => {
   let data = await Demon.find({ game: gameTitle });
@@ -52,6 +53,11 @@ const affinitiesQuery = async (gameTitle: string) => {
   return data;
 };
 
+const evolutionQuery = async (gameTitle: string) => {
+  let data = await Evolution.find({ game: gameTitle });
+  return data;
+};
+
 const remapSkills = (skills: any) => {
   let skillKeys = Object.keys(skills);
   let mappedSkills: Skill[] = [];
@@ -68,5 +74,6 @@ module.exports = {
   demonQueryByRace,
   demonQueryByName,
   demonQueryBySkills,
-  affinitiesQuery
+  affinitiesQuery,
+  evolutionQuery,
 };
