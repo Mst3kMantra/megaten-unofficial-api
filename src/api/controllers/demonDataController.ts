@@ -4,6 +4,7 @@ const demonService = require("../services/demonService.js");
 
 const getDemonList = asyncHandler(
   async (req: any, res: { json: (arg0: any) => void }, next: any) => {
+    console.log(process.env.DATABASE_URL);
     const data = await demonService.demonQuery(req.params.game);
     res.json(data);
   }

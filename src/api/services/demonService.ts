@@ -6,6 +6,7 @@ const Evolution = require("../models/Evolution.js");
 
 const demonQuery = async (gameTitle: string) => {
   let data = await Demon.find({ game: gameTitle });
+  console.log("Service connected");
   for (const d of data) {
     d.skills = remapSkills(d.skills);
   }
