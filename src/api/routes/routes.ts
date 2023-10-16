@@ -2,7 +2,7 @@ const ex = require("express");
 const Demon = require("../models/Demon.js");
 const router = ex.Router();
 
-const demonDataController = require("../controllers/demondataController.js");
+const demonDataController = require("../controllers/demonDataController.js");
 const skillDataController = require("../controllers/skillDataController.js");
 const fusionController = require("../controllers/fusionController.js");
 
