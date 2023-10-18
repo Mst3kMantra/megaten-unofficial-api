@@ -5,15 +5,22 @@ const mongoose = require("mongoose");
 
 const routes = require("./src/api/routes/routes");
 
+let conn = null;
+
 app = express();
 
 app.use(express.json());
 app.use((req, res, next) => {
   try {
-    console.log("CONNECTING TO DB SUCCESSFULLY");
-    mongoose.connect(process.env.DATABASE_URL);
-    console.log("CONNECTED TO DB SUCCESSFULLY");
-    next();
+    if (conn == null) {
+      console.log("CONNECTING TO DB");
+      conn = mongoose.connect(process.env.DATABASE_URL);
+      console.log("CONNECTED TO DB SUCCESSFULLY");
+      next();
+    } else {
+      console.log("CONNECTED");
+      next();
+    }
   } catch (err) {
     next(err);
   }

@@ -5,7 +5,6 @@ const Affinity = require("../models/Affinity.js");
 const Evolution = require("../models/Evolution.js");
 const demonQuery = async (gameTitle) => {
   let data = await Demon.find({ game: gameTitle });
-  console.log("Service connected");
   for (const d of data) {
     d.skills = remapSkills(d.skills);
   }
